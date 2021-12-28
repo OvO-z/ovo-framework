@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+top.ooovo.framework.swagger.config.SwaggerAutoConfiguration,\
+top.ooovo.framework.apilog.config.ApiLogAutoConfiguration,\
+top.ooovo.framework.web.config.OvoWebAutoConfiguration,\
+top.ooovo.framework.jackson.config.JacksonAutoConfiguration

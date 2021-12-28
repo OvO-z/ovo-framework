@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+top.ooovo.framework.security.config.SecurityAutoConfiguration,\
+top.ooovo.framework.security.config.OvoWebSecurityConfigurerAdapter
