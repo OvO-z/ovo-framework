@@ -7,7 +7,7 @@
     <groupId>top.ooovo</groupId>
     <artifactId>ovo-framework</artifactId>
     <packaging>pom</packaging>
-    <version>${revision}</version>
+    <version>1.0-snapshot</version>
 
     <modules>
         <module>ovo-common</module>
