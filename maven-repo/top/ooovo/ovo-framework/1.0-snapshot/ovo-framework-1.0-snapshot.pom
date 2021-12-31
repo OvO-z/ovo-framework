@@ -67,10 +67,28 @@
                 </exclusions>
             </dependency>
 
-            <!-- Web 相关 -->
+            <!-- 框架 相关 -->
             <dependency>
                 <groupId>top.ooovo</groupId>
                 <artifactId>ovo-framework-starter-web</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>top.ooovo</groupId>
+                <artifactId>ovo-framework-starter-security</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>top.ooovo</groupId>
+                <artifactId>ovo-framework-starter-redis</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>top.ooovo</groupId>
+                <artifactId>ovo-framework-starter-mybatis</artifactId>
                 <version>${revision}</version>
             </dependency>
 
