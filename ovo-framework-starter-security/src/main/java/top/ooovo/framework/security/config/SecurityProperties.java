@@ -14,7 +14,7 @@ import java.time.Duration;
  */
 
 
-@ConfigurationProperties(prefix = "cqu.security")
+@ConfigurationProperties(prefix = "ovo.security")
 @Validated
 @Data
 public class SecurityProperties {
