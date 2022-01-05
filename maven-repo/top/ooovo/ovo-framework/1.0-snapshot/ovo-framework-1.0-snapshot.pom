@@ -21,7 +21,7 @@
         <repository>
             <id>ovo-framework</id>
             <name>Github Release</name>
-            <url>file://${project.basedir}/maven-repo</url>
+            <url>file://F://Idea Workspace/ovo-framework/maven-repo/</url>
         </repository>
     </distributionManagement>
 
@@ -169,38 +169,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <repositories>
-        <repository>
-            <id>ovo-common</id>
-            <name>The ovo-common on Github</name>
-            <url>https://ovo-z.github.io/ovo-framework/ovo-common/maven-repo</url>
-        </repository>
-
-        <repository>
-            <id>ovo-mybatis-starter</id>
-            <name>The Maven Repository on Github</name>
-            <url>https://ovo-z.github.io/ovo-framework/ovo-framework-starter-mybatis/maven-repo</url>
-        </repository>
-
-        <repository>
-            <id>ovo-redis-starter</id>
-            <name>The ovo-redis-starter on Github</name>
-            <url>https://ovo-z.github.io/ovo-framework/ovo-framework-starter-redis/maven-repo</url>
-        </repository>
-
-        <repository>
-            <id>ovo-security-starter</id>
-            <name>The ovo-security-starter on Github</name>
-            <url>https://ovo-z.github.io/ovo-framework/ovo-framework-starter-security/maven-repo</url>
-        </repository>
-
-        <repository>
-            <id>ovo-web-starter</id>
-            <name>The ovo-web-starter on Github</name>
-            <url>https://ovo-z.github.io/ovo-framework/ovo-framework-starter-web/maven-repo</url>
-        </repository>
-    </repositories>
 
     <build>
         <plugins>
