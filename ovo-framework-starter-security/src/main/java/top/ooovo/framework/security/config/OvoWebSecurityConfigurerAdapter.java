@@ -95,7 +95,6 @@ public class OvoWebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapte
 
     /**
      * 配置 URL 的安全配置
-     *
      * anyRequest          |   匹配所有请求路径
      * access              |   SpringEl表达式结果为true时可以访问
      * anonymous           |   匿名可以访问
