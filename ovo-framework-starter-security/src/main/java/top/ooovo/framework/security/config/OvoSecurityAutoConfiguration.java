@@ -29,7 +29,7 @@ import javax.annotation.Resource;
 
 @Configuration
 @EnableConfigurationProperties(SecurityProperties.class)
-public class SecurityAutoConfiguration {
+public class OvoSecurityAutoConfiguration {
 
     @Resource
     private SecurityProperties securityProperties;

@@ -1,25 +1,26 @@
 package top.ooovo.framework.security.config;
 
-import top.ooovo.framework.security.core.filter.JwtAuthenticationTokenFilter;
-import top.ooovo.framework.security.core.service.SecurityAuthFrameworkService;
-import top.ooovo.framework.web.config.WebProperties;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
+import top.ooovo.framework.security.core.filter.JwtAuthenticationTokenFilter;
+import top.ooovo.framework.security.core.service.SecurityAuthFrameworkService;
+import top.ooovo.framework.web.config.WebProperties;
 
 import javax.annotation.Resource;
 
@@ -31,6 +32,7 @@ import javax.annotation.Resource;
  */
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
+@Order(99)
 public class OvoWebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapter {
     @Resource
     private WebProperties webProperties;
@@ -65,13 +67,6 @@ public class OvoWebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapte
      */
     @Resource
     private JwtAuthenticationTokenFilter authenticationTokenFilter;
-    /**
-     * 自定义的权限映射 Bean
-     *
-     * @see #configure(HttpSecurity)
-     */
-    @Resource
-    private Customizer<ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry> authorizeRequestsCustomizer;
 
     /**
      * 由于 Spring Security 创建 AuthenticationManager 对象时，没声明 @Bean 注解，导致无法被注入
@@ -141,10 +136,8 @@ public class OvoWebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapte
 //                .antMatchers("/actuator/**").anonymous()
                 // Druid 监控 TODO 等对接了 druid admin 后，在调整下。
                 .antMatchers("/druid/**").anonymous()
-                // 设置每个请求的权限 ②：每个项目的自定义规则
-                .and().authorizeRequests(authorizeRequestsCustomizer)
                 // 设置每个请求的权限 ③：兜底规则，必须认证
-                .authorizeRequests().anyRequest().authenticated()
+                .and().authorizeRequests().anyRequest().authenticated()
         ;
         // 添加 JWT Filter
         httpSecurity.addFilterBefore(authenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
