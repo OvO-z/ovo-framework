@@ -28,7 +28,7 @@
     <properties>
         <revision>1.0-snapshot</revision>
         <!-- 统一依赖管理 -->
-        <spring.boot.version>2.4.5</spring.boot.version>
+        <spring.boot.version>2.3.0.RELEASE</spring.boot.version>
         <!-- Web 相关 -->
         <knife4j.version>3.0.2</knife4j.version>
         <swagger-annotation.version>1.5.22</swagger-annotation.version>

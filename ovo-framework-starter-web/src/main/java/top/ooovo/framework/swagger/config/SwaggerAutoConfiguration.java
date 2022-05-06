@@ -31,7 +31,7 @@ import static springfox.documentation.builders.RequestHandlerSelectors.basePacka
 @EnableSwagger2
 @EnableKnife4j
 @ConditionalOnClass({Docket.class, ApiInfoBuilder.class})
-@ConditionalOnProperty(prefix = "cqu.swagger", value = "enable", matchIfMissing = true)
+@ConditionalOnProperty(prefix = "ovo.swagger", value = "enable", matchIfMissing = true)
 @EnableConfigurationProperties(SwaggerProperties.class)
 public class SwaggerAutoConfiguration {
     @Bean

@@ -11,7 +11,7 @@ import javax.validation.constraints.NotEmpty;
  * @date 2021/11/19
  */
 
-@ConfigurationProperties("cqu.swagger")
+@ConfigurationProperties("ovo.swagger")
 @Data
 public class SwaggerProperties {
     /**
