@@ -21,7 +21,7 @@
         <repository>
             <id>ovo-framework</id>
             <name>Github Release</name>
-            <url>file://E://workspace/idea/ovo-framework/maven-repo/</url>
+            <url>file://F://Idea Workspace/ovo-framework/maven-repo/</url>
         </repository>
     </distributionManagement>
 
