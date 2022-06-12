@@ -28,7 +28,9 @@ public class SortingField implements Serializable {
      */
     private String order;
 
-    // 空构造方法，解决反序列化
+    /**
+     *  空构造方法，解决反序列化
+     */
     public SortingField() {
     }
 

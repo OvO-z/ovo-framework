@@ -117,7 +117,10 @@ public class CollectionUtils {
                 .collect(Collectors.groupingBy(keyFunc, Collectors.mapping(valueFunc, Collectors.toList())));
     }
 
-    // 暂时没想好名字，先以 2 结尾噶
+    /**
+     * 暂时没想好名字，先以 2 结尾
+     */
+
     public static <T, K, V> Map<K, Set<V>> convertMultiMap2(Collection<T> from, Function<T, K> keyFunc, Function<T, V> valueFunc) {
         if (CollUtil.isEmpty(from)) {
             return new HashMap<>();
