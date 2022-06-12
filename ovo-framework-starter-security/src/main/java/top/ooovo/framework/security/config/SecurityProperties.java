@@ -53,6 +53,6 @@ public class SecurityProperties {
      * 这里设置了一个默认值，因为实际上只有 mockEnable 为 true 时才需要配置。
      */
     @NotEmpty(message = "mock 模式的秘钥不能为空")
-    private String mockSecret = "Hash(xqy03); ";
+    private String mockSecret = "ooovo";
 
 }
