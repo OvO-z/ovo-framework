@@ -140,6 +140,15 @@ public class CollectionUtils {
         return from.stream().filter(predicate).findFirst().orElse(null);
     }
 
+    public static <T, V extends Comparable<? super V>> V getMaxValue(List<T> from, Function<T, V> valueFunc) {
+        if (CollUtil.isEmpty(from)) {
+            return null;
+        }
+        assert from.size() > 0; // 断言，避免告警
+        T t = from.stream().max(Comparator.comparing(valueFunc)).get();
+        return valueFunc.apply(t);
+    }
+
     public static <T> void addIfNotNull(Collection<T> coll, T item) {
         if (item == null) {
             return;
