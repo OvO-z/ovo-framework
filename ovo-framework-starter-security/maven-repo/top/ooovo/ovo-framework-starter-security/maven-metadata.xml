@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
   <groupId>top.ooovo</groupId>
-  <artifactId>ovo-framework</artifactId>
+  <artifactId>ovo-framework-starter-security</artifactId>
   <versioning>
     <release>1.0-snapshot</release>
     <versions>
       <version>1.0-snapshot</version>
     </versions>
-    <lastUpdated>20220720153720</lastUpdated>
+    <lastUpdated>20220720153736</lastUpdated>
   </versioning>
 </metadata>

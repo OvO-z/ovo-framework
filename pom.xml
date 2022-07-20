@@ -21,7 +21,7 @@
         <repository>
             <id>ovo-framework</id>
             <name>Github Release</name>
-            <url>file://F://Idea Workspace/ovo-framework/maven-repo/</url>
+            <url>file://${project.basedir}/maven-repo/</url>
         </repository>
     </distributionManagement>
 
@@ -42,7 +42,7 @@
         <lombok.version>1.18.20</lombok.version>
         <mapstruct.version>1.4.1.Final</mapstruct.version>
         <hutool.version>5.6.1</hutool.version>
-
+        <guava.version>30.1.1-jre</guava.version>
         <!-- Maven 相关 -->
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -167,13 +167,20 @@
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.4.0</version>
                 <configuration>
                     <doclint>none</doclint>
                 </configuration>
